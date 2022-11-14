@@ -118,22 +118,24 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           const SizedBox(height: 15),
-                          Text.rich(TextSpan(
-                              text: "Dont't have an account? ",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 14),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: 'Register here',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        decoration: TextDecoration.underline),
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () {
-                                        nextScreen(
-                                            context, const RegisterPage());
-                                      })
-                              ]))
+                          Text.rich(
+                            TextSpan(
+                                text: "Dont't have an account? ",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 14),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: 'Register here',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          decoration: TextDecoration.underline),
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () {
+                                          nextScreen(
+                                              context, const RegisterPage());
+                                        })
+                                ]),
+                          )
                         ]),
                   ),
                 ),
@@ -149,12 +151,13 @@ class _LoginPageState extends State<LoginPage> {
           await authService.logInUserWithEmailandPassword(email, password);
       String message = '';
       if (emailLogInResults == EmailLogInResults.LogInCompleted) {
-      QuerySnapshot snapshot =
-          await DataBaseService(uid: FirebaseAuth.instance.currentUser!.uid)
-              .gettingUserData(email);
+        QuerySnapshot snapshot =
+            await DataBaseService(uid: FirebaseAuth.instance.currentUser!.uid)
+                .gettingUserData(email);
         await HelperFunctions.saveUserLoggedInStatus(true);
         await HelperFunctions.saveUserEmailSF(email);
-        await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);//naze
+        await HelperFunctions.saveUserNameSF(
+            snapshot.docs[0]['fullName']); //naze
         print(snapshot.docs[0]['fullName']);
         nextScreenReplacement(context, const HomePage());
       } else if (emailLogInResults == EmailLogInResults.EmailNotVerified) {

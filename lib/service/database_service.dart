@@ -9,6 +9,7 @@ class DataBaseService {
       FirebaseFirestore.instance.collection('users');
   final CollectionReference groupCollection =
       FirebaseFirestore.instance.collection('groups');
+  static DocumentSnapshot? fetchedLastDoc;
 
   // saving the userdata
   Future savingUserData(String fullName, String email) async {
@@ -59,10 +60,29 @@ class DataBaseService {
 
   //getting the chat
   getChats(String groupId) async {
+    final snapshots = await groupCollection
+        .doc(groupId)
+        .collection('message')
+        .orderBy('time', descending: true)
+        .limit(3)
+        .get();
+
+    //fetchedLastDoc = snapshots.docs.last;
+    return snapshots;
+    // return groupCollection
+    //     .doc(groupId)
+    //     .collection('messages')
+    //     .orderBy('time')
+    //     .snapshots();
+  }
+
+  getChatsRefreshed(String groupId, DocumentSnapshot fetchedLastDoc) async {
     return groupCollection
         .doc(groupId)
         .collection('messages')
         .orderBy('time')
+        .startAfterDocument(fetchedLastDoc)
+        .limit(9)
         .snapshots();
   }
 

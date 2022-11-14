@@ -24,7 +24,6 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getCurrentUserIdandName();
   }
@@ -99,10 +98,11 @@ class _SearchPageState extends State<SearchPage> {
         _isLoading
             ? Center(
                 child: Center(
-                child: CircularProgressIndicator(
-                  color: Theme.of(context).primaryColor,
+                  child: CircularProgressIndicator(
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
-              ))
+              )
             : groupList(),
       ]),
     );
@@ -121,6 +121,7 @@ class _SearchPageState extends State<SearchPage> {
           _isLoading = false;
           hasUserSearched = true;
         });
+        print(searchSnapShot!.docs[0]['groupId']);
       });
     }
   }
@@ -132,10 +133,11 @@ class _SearchPageState extends State<SearchPage> {
             itemCount: searchSnapShot!.docs.length,
             itemBuilder: ((context, index) {
               return groupTile(
-                  userName,
-                  searchSnapShot!.docs[index]['groupId'],
-                  searchSnapShot!.docs[index]['groupName'],
-                  searchSnapShot!.docs[index]['admin']);
+                userName,
+                searchSnapShot!.docs[index]['groupId'],
+                searchSnapShot!.docs[index]['groupName'],
+                searchSnapShot!.docs[index]['admin'],
+              );
             }),
           )
         : Container();

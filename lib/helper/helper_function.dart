@@ -1,5 +1,4 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shared_preferences_ios/shared_preferences_ios.dart';
 
 class HelperFunctions {
   static String userLoggedInKey = "LOGGEDINKEY";

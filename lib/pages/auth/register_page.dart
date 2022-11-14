@@ -46,9 +46,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           const SizedBox(height: 10),
                           const Text(
-                              'Create your account now to chat and explore',
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold)),
+                            'Create your account now to chat and explore',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                           Image.asset("assets/register.png"),
                           TextFormField(
                             decoration: textInputDecoration.copyWith(
@@ -140,7 +141,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                           ),
                           const SizedBox(height: 15),
-                          Text.rich(TextSpan(
+                          Text.rich(
+                            TextSpan(
                               text: "Already have an account? ",
                               style:
                                   TextStyle(color: Colors.black, fontSize: 14),
@@ -154,7 +156,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                       ..onTap = () {
                                         nextScreen(context, const LoginPage());
                                       })
-                              ]))
+                              ],
+                            ),
+                          ),
                         ]),
                   ),
                 ),
