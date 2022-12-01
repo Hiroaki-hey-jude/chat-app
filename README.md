@@ -1,17 +1,11 @@
 # flutter_chat
+Flutter製のチャットアプリ。
+<img width="200" height="350" src="https://user-images.githubusercontent.com/76618285/204978156-8908f9a2-e6a4-4ab2-a36c-2e84422e9c50.png" alt="">
+<img width="200" height="350" src="https://user-images.githubusercontent.com/76618285/204978031-e006eed8-0a2a-48b5-9ad8-044cef6c2a8a.png" alt="">
 
-A new Flutter project.
+## 概要
+主にStreamBuilderを使いチャット部分を開発。
+state managementはsetStateを使用。
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# chat-app
