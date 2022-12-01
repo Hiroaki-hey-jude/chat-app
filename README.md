@@ -1,7 +1,9 @@
 # flutter_chat
 レジスター画面
+
 <img width="300" height="600" src="https://user-images.githubusercontent.com/76618285/204978156-8908f9a2-e6a4-4ab2-a36c-2e84422e9c50.png" alt="">
 グループ画面
+
 <img width="300" height="600" src="https://user-images.githubusercontent.com/76618285/204978031-e006eed8-0a2a-48b5-9ad8-044cef6c2a8a.png" alt="">
 
 Flutter製のチャットアプリ。
